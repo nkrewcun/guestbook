@@ -36,7 +36,7 @@ export class MessageService {
   }
 
   add(message: Message): Observable<Message> {
-    return this.http.post<Message>(this.apiUrl, this.httpOptions)
+    return this.http.post<Message>(this.apiUrl, message, this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.handleError)

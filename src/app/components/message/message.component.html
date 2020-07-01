@@ -7,6 +7,12 @@
       <div class="card-body">
         <h5 class="card-title">{{message.titre}}</h5>
         <p class="card-text">{{message.description}}</p>
+        <a [routerLink]="['/messages/edit', message.id]" mat-fab color="primary" aria-label="edit button">
+          <mat-icon>create</mat-icon>
+        </a>
+        <a [routerLink]="['/messages']" (click)="delete(message.id)" mat-fab color="primary" aria-label="delete button">
+          <mat-icon>delete</mat-icon>
+        </a>
       </div>
     </div>
   </div>

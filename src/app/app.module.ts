@@ -11,8 +11,12 @@ import { AddMessageComponent } from './components/add-message/add-message.compon
 import { EditMessageComponent } from './components/edit-message/edit-message.component';
 import {CollapseModule} from "ngx-bootstrap/collapse";
 import { HomeComponent } from './components/home/home.component';
-import {MatCardModule} from '@angular/material/card';
 import {HttpClientModule} from "@angular/common/http";
+
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -29,8 +33,11 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     BrowserAnimationsModule,
     CollapseModule.forRoot(),
+    HttpClientModule,
+    FormsModule,
     MatCardModule,
-    HttpClientModule
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

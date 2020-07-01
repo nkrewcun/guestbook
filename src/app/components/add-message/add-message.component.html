@@ -1,1 +1,22 @@
-<p>add-message works!</p>
+<h2>Ajouter un message : </h2>
+<div class="container">
+  <form #messageForm="ngForm" (ngSubmit)="addMessage()">
+    <div class="form-group">
+
+      <label for="titre">Titre</label>
+      <input type="text" class="form-control" id="titre" name="titre" placeholder="titre" required
+             [(ngModel)]="message.titre" #titre="ngModel"/>
+      <div [hidden]="titre.valid" class="alert alert-danger">
+        Le titre est requis
+      </div>
+
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" name="description" rows="3" placeholder="Description" [(ngModel)]="message.description"  #description="ngModel"></textarea>
+
+      <label for="image">Image</label>
+      <input type="text" class="form-control" id="image" name="image" [(ngModel)]="message.image" #image="ngModel"/>
+    </div>
+
+    <input [disabled]="!messageForm.valid" type="submit"/>
+  </form>
+</div>

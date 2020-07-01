@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Message} from "../../models/message";
+import {MessageService} from "../../services/message.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-message',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddMessageComponent implements OnInit {
 
-  constructor() { }
+  message = new Message();
 
-  ngOnInit(): void {
+  constructor(private messageService: MessageService, private router: Router) {
   }
 
+  ngOnInit(): void {
+
+  }
+
+  addMessage() {
+    this.messageService.add(this.message).subscribe(() => {
+      this.router.navigate(['/messages']);
+    });
+  }
 }
