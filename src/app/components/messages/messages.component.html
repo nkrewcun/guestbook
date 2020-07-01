@@ -1,7 +1,12 @@
-<div class="card" style="width: 18rem;" *ngFor="let message of messages">
-  <img src="{{message.image}}" class="card-img-top" alt="{{message.titre}}">
-  <div class="card-body">
-    <h5 class="card-title">{{message.titre}}</h5>
-    <a [routerLink]="['/messages', message.id]" class="btn btn-primary">Plus</a>
+<ng-container *ngIf="!isLoading">
+  <div class="card" style="width: 18rem;" *ngFor="let message of messages">
+    <img src="{{message.image}}" class="card-img-top" alt="{{message.titre}}">
+    <div class="card-body">
+      <h5 class="card-title">{{message.titre}}</h5>
+      <a [routerLink]="['/messages', message.id]" class="btn btn-primary">Plus</a>
+    </div>
   </div>
+</ng-container>
+<div class="text-center" *ngIf="isLoading">
+  <mat-spinner></mat-spinner>
 </div>

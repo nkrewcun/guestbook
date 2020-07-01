@@ -1,20 +1,20 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" routerLink="/home">Livre d'or</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" [attr.aria-expanded]="!isCollapsed" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav" [collapse]="isCollapsed" [isAnimated]="true">
     <ul class="navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" routerLink="/home">Accueil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/messages">Messages</a>
+        <a class="nav-link" routerLink="/messages">Tous les messages</a>
       </li>
       <li class ="nav-item">
-        <a class="nav-link" routerLink="/messages/add">Ajouter</a>
+        <a class="nav-link" routerLink="/messages/add">Ajouter son message</a>
       </li>
     </ul>
-    <p class="nav-link">Nous sommes le {{ date | date: "dd/MM/yyyy"}}</p>
+    <p class="pl-0 nav-link text-white-50">Nous sommes le {{ date | date: "dd/MM/yyyy"}}</p>
   </div>
 </nav>

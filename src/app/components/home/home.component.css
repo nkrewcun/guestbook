@@ -1,0 +1,18 @@
+.jumbotron {
+  background-color: #222;;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Yellowtail', cursive;
+  font-size: 10rem;
+  line-height: 10rem;
+  color: #FFD700;
+}
+
+img {
+  border-radius: 50%;
+  display: block;
+  margin: 0px auto 1rem auto;
+}
